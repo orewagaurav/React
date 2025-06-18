@@ -1,10 +1,13 @@
-import { useState } from 'react'
+import Test from "./test"
 
 function App() {
-  
   return (
-<h1>React + Vite </h1>
+    <>
+      <Test/>
+      <h1>Hello World</h1>
+      <p>orenawa kaizokuni naruhodu</p>
+    </>
   )
 }
 
-export default App
+export default App;

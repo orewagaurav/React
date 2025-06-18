@@ -1,7 +1,11 @@
+import Test from "./test";
 
 function App() {
   return (
-    <h1>react mode on</h1>
+    <>
+      <Test />
+      <p>yess!!</p>
+    </>
   );
 }
 
