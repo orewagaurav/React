@@ -13,11 +13,12 @@ function App() {
   
   
   return (
-    <>
-      <h1 className="bg-amber-300 text-2xl text-red-700">Hello Developers !</h1>
-      <Card course="javaScript" someObj={myObj} btnText="Learn javascript" />
-      <Card course="Java" a="https://docs.oracle.com/en/java/"/>
-    </>
+    <div className="flex justify-around p-6 bg-gray-500">
+      <div className="w-48 h-32 bg-red-500 shadow-sm rounded-lg p-4">Small Shadow</div>
+      <div className="w-48 h-32 bg-red-500 shadow-md rounded-lg p-4">Medium Shadow</div>
+      <div className="w-48 h-32 bg-white shadow-lg rounded-lg p-4">Large Shadow</div>
+      <div className="w-48 h-32 bg-white shadow-xl rounded-lg p-4">Extra Large Shadow</div>
+    </div>
   );
 }
 
