@@ -2,14 +2,17 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Navbar from './WithoutContext/Components/Navbar'
+import { counterContext } from './Context/Context'
+import Navbar from './Components/Navbar'
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Navbar test ={count} name="Gaurav"/>
+    <counterContext.Provider value={{count,setCount}}>
+      <Navbar />
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -30,6 +33,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      </counterContext.Provider>
     </>
   )
 }

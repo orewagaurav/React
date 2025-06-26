@@ -23,6 +23,10 @@ npm run dev
 - Linting with ESLint
 - Easily extensible with TypeScript
 
+## Export 
+    🔹 export const → Named Export → Must Use Curly braces {} 
+    🔹 export default → Default Export → Avoid Curly braces {}
+
 ## 📁 Project Structure
 
 ```
