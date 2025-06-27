@@ -1,12 +1,17 @@
 import Test from "./test"
-import React, { useState,useEffect } from 'react'
-
+import React, { useState,useEffect,useRef } from 'react'
 
 function App() {
   const [count,setCount] = useState(0)
-  const effect  = useEffect(()=>{
-    alert("Welcome to my Page !")
-  },[count])
+  const ref =useRef(0);
+  const [showBtn,setShowBtn] = useState(false)
+
+  useEffect(()=>{
+    console.log(`First rendering...`);
+    ref.current.style.backgroundColor = 'red'
+    
+    
+  },[])
   return (
     <>
       <Test/>
@@ -14,7 +19,13 @@ function App() {
       <p>orenawa kaizokuni naruhodu</p>
       <h2>Ohayo Gozaimasu</h2>
       <h1>Zoro</h1>
-      <button onClick={()=>setCount(count+1)}>{count}</button>
+      <button ref={ref} onClick={()=>setCount(count+1)}>click me {count}</button>
+      <button ref={ref} onClick={()=>setShowBtn(!showBtn)}>Show Btn {count}</button>
+      <br></br>
+      {/* {showBtn?<button>Show if true !</button>:"Nothing"} */}
+
+      {showBtn && <button>Touch me !!</button>}
+
     </>
   )
 }
