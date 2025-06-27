@@ -1,32 +1,48 @@
 import Test from "./test"
-import React, { useState,useEffect,useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 function App() {
-  const [count,setCount] = useState(0)
-  const ref =useRef(0);
-  const [showBtn,setShowBtn] = useState(false)
+  const [count, setCount] = useState(0)
+  const buttonRef = useRef(null);
+  const toggleRef = useRef(null);
+  const [showBtn, setShowBtn] = useState(false)
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log(`First rendering...`);
-    ref.current.style.backgroundColor = 'red'
-    
-    
-  },[])
+    if (buttonRef.current) {
+      buttonRef.current.style.backgroundColor = 'red';
+    }
+  }, [])
+
   return (
-    <>
-      <Test/>
-      <h1>Hello World</h1>
-      <p>orenawa kaizokuni naruhodu</p>
-      <h2>Ohayo Gozaimasu</h2>
-      <h1>Zoro Juro </h1>
-      <button ref={ref} onClick={()=>setCount(count+1)}>click me {count}</button>
-      <button ref={ref} onClick={()=>setShowBtn(!showBtn)}>Show Btn {count}</button>
-      <br></br>
-      {/* {showBtn?<button>Show if true !</button>:"Nothing"} */}
-
-      {showBtn && <button>Touch me !!</button>}
-
-    </>
+    <div className="container">
+      <Test />
+      <div className="card flex items-center gap-4">
+        <div style={{ fontSize: '1.875rem', fontWeight: '500', color: '#ef4444' }}>Hello World</div>
+        <p>orenawa kaizokuni naruhodu</p>
+        <h2>Ohayo Gozaimasu</h2>
+        <h1 style={{ color: '#16a34a' }}>Zoro Juro</h1>
+      </div>
+      <div className="mt-4 flex justify-center gap-4">
+        <button 
+          ref={buttonRef} 
+          onClick={() => setCount(count + 1)} 
+          className="btn-primary"
+        >
+          click me {count}
+        </button>
+        <button 
+          ref={toggleRef} 
+          onClick={() => setShowBtn(!showBtn)} 
+          className="btn-success"
+        >
+          Show Btn {count}
+        </button>
+      </div>
+      {showBtn && (
+        <button className="mt-4 btn-warning">Touch me !!</button>
+      )}
+    </div>
   )
 }
 
