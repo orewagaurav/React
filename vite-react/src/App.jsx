@@ -42,6 +42,7 @@ function App() {
       {showBtn && (
         <button className="mt-4 btn-warning">Touch me !!</button>
       )}
+      <h1 className="text-red-800 text-3xl">GAURAV KUMAR</h1>
     </div>
   )
 }
