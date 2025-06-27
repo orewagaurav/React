@@ -18,7 +18,7 @@ function App() {
       <h1>Hello World</h1>
       <p>orenawa kaizokuni naruhodu</p>
       <h2>Ohayo Gozaimasu</h2>
-      <h1>Zoro</h1>
+      <h1>Zoro Juro </h1>
       <button ref={ref} onClick={()=>setCount(count+1)}>click me {count}</button>
       <button ref={ref} onClick={()=>setShowBtn(!showBtn)}>Show Btn {count}</button>
       <br></br>
