@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import "./App.css";
+import Background from "./Component/Background";
 
 function App() {
   const [length, setLength] = useState(8);
@@ -35,9 +36,9 @@ function App() {
     passwordGenerator();
   }, [numberAllowed, charAllowed, length, passwordGenerator]);
   return (
-    <>
-      <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-4 my-8 text-orange-500 bg-gray-800">
-        <h1 className="text-white text-center  text-2xl my-3">
+    <Background>
+      <div className="w-full max-w-2xl mx-auto shadow-md rounded-lg px-8 py-8 my-16 text-red-600 font-bold bg-gray-800">
+        <h1 className="text-white text-center text-4xl my-6">
           Password Generator
         </h1>
         <div className="flex shadow bg-white  rounded-lg overflow-hidden mb-4">
@@ -94,7 +95,7 @@ function App() {
           </div>
         </div>
       </div>
-    </>
+    </Background>
   );
 }
 
