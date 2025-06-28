@@ -2,7 +2,7 @@
 
 A modern React application that generates secure passwords with customizable options. Built with React and styled with Tailwind CSS.
 
-![Password Generator Screenshot](./screenshot.png)
+![Password Generator Screenshot](./src/assets/image.png)
 
 ## Features
 
