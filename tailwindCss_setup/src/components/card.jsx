@@ -6,7 +6,7 @@ function Card({course,btnText="Learn Java",a="https://developer.mozilla.org/en-U
     
   return (
     <>
-      <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 m-4">
+      <div className="flex justify-center items-center h-md max-w-md p-2 bg-red-500 border border-gray-200 rounded-lg shadow-sm dark:bg-red-500 dark:border-gray-700 m-4">
         <a href="#">
           <img
             className="rounded-t-lg"
