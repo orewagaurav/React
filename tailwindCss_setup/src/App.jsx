@@ -1,25 +1,34 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { useState} from "react";
+import {createBrowserRouter,RouterProvider} from 'react-router-dom'
 import "./App.css";
-import Card from './components/card.jsx'
+import Card from "./components/card.jsx";
+import Navbar from "./components/Navbar.jsx";
+import Home from "./components/Home.jsx";
+import Login from "./components/Login.jsx";
 
 function App() {
-  let myObj = {
-    username:"orewagaurav",
-    account:"GitHub"
-  }
-  let myArr = [1,2,3,4,5]
-  
-  
+  const router = createBrowserRouter([
+    {
+      path:'/',
+      element:<><Navbar/><Home/></>
+    },
+    {
+      path:"/login",
+      element:<><Navbar/><Login/></>
+    },
+    {
+      path:"/card",
+      element:<><Navbar/><Card/></>
+    }
+  ])
+
   return (
-    <div className="flex justify-around p-6 bg-gray-500">
-      <div className="w-48 h-32 bg-red-500 shadow-sm rounded-lg p-4">Small Shadow</div>
-      <div className="w-48 h-32 bg-red-500 shadow-md rounded-lg p-4">Medium Shadow</div>
-      <div className="w-48 h-32 bg-white shadow-lg rounded-lg p-4">Large Shadow</div>
-      <div className="w-48 h-32 bg-white shadow-xl rounded-lg p-4">Extra Large Shadow</div>
+    <div className="bg-gray-700 h-screen ">
+    <div>Hlw hey byee </div>
+
+    <RouterProvider router = {router}/>
     </div>
-  );
+  )
 }
 
 export default App;
